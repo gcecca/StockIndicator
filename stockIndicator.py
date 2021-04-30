@@ -2,6 +2,7 @@ import yfinance
 import yahoo_fin.stock_info as si
 
 #Return dividend yield on previous market close
+
 def yield_on_close (ticker):
 	stock = yfinance.Ticker(ticker)
 	df = stock.history(period = '1d', start = '2020-1-1', end = '2020-12-31')
@@ -55,6 +56,7 @@ def last_year_dividends (ticker):
 
 def last_year_dividends_df (ticker):
 	t = yfinance.Ticker(ticker)
+	#TODO: Set last year
 	df = t.history(period = '1d', start = '2020-1-1', end = '2020-12-31')
 	# return last year dividends excluding taxes
 	try:
